@@ -1,0 +1,92 @@
+.task {
+
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #ced4dd;
+
+  &_completed {
+    color: #999999;
+    text-decoration: line-through;
+  }
+
+  &__checkbox {
+    -webkit-appearance: none;
+    flex-shrink: 0;
+    outline: 0;
+    margin-right: 25px;
+    margin-left: 45px;
+    border: 1px solid #d3d3d3;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(#fafafa, #f0f0f0);
+    box-shadow: 0 1px 1px rgba(#000, .15);
+    cursor: pointer;
+  }
+  &_completed &__checkbox {
+    background: linear-gradient(#eeeeee, #fafafa);
+    box-shadow: inset 0 1px 1px rgba(#000, .15);
+    // non-standard; input is not a container element
+    &::before {
+      content: '';
+      display: block;
+      box-sizing: border-box;
+      border-radius: 50%;
+      padding: 5px;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#6db836, #3e8734 90%);
+      background-clip: content-box;
+    }
+  }
+
+  &__name {
+    border-left: 1px solid #F9C8C9;
+    padding: 25px 20px;
+    font-size: 20px;
+    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__delete-button {
+    position: relative;
+    flex-shrink: 0;
+    outline: 0;
+    margin-right: 25px;
+    margin-left: auto;
+    border: 0;
+    width: 26px;
+    height: 26px;
+    text-indent: -10000px;
+    background: none;
+    opacity: 0;
+    transition: opacity 300ms ease, transform 200ms ease;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 11px;
+      background: #d62323;
+      border-radius: 3px;
+      width: 3px;
+      height: 100%;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  &__delete-button:hover {
+    transform: scale(1.15);
+  }
+  &:hover &__delete-button,
+  &__delete-button:focus {
+    opacity: 1;
+  }
+
+}

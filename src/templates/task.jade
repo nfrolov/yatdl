@@ -1,0 +1,4 @@
+li.task(class={task_completed: model.completed})
+  input.task__checkbox(type='checkbox', checked=model.completed)
+  span.task__name= model.name
+  button.task__delete-button(type='button') Delete
