@@ -11,7 +11,6 @@ class MainView extends View {
   constructor({tasks}) {
     super({template: MainTemplate});
     this._tasks = tasks;
-    console.log('hello world');
   }
 
   render() {
