@@ -19,9 +19,12 @@
     border-radius: 50%;
     width: 32px;
     height: 32px;
-    background: linear-gradient(#fafafa, #f0f0f0);
+    background: #fafafa linear-gradient(#fafafa, #f0f0f0);
     box-shadow: 0 1px 1px rgba(#000, .15);
     cursor: pointer;
+  }
+  &__checkbox:hover {
+    background: #f8f8f8;
   }
   &_completed &__checkbox {
     background: linear-gradient(#eeeeee, #fafafa);
